@@ -6,8 +6,11 @@
 
 ## 当前状态
 
-- React + Vite + Tailwind CSS 4 学习项目已初始化，`npm run build` 通过。
-- `src/App.jsx` 包含 Tailwind、Three.js 和 GSAP 的组合示例。
+- React + Vite + Tailwind CSS 4 单页项目已初始化，`npm run build` 通过。
+- `src/App.jsx` 已实现 Apple 风格的 MacBook Pro Hero：Three.js 程序化笔记本、彩色灯光、GSAP 入场动画与指针视差。
+- `src/styles.css` 定义该页面的深色沉浸式视觉、导航、渐变标题、CTA 和响应式规则。
+- `ui-registry.md` 已记录首个 Hero 页面可复用的视觉模式。
+- 已安装 `zustand` 和 `clsx`，可用于后续动态交互与条件 CSS 类名。
 - GitHub 仓库 `wenxvn/apple-frontend` 的 `main` 分支已配置并推送；2026-07-16 已确认可直接推送。
 - Vercel 项目 `wenxvns-projects/apple-frontend` 已关联，框架为 Vite，构建命令为 `npm run build`，输出目录为 `dist`。
 - 尚未创建生产部署。
@@ -21,7 +24,7 @@
 
 ## 下一步
 
-- 由项目负责人确定第一个实际学习功能或页面，再按 `docs/TASK_TEMPLATE.md` 建立任务。
+- 如需继续，优先在真实设备上微调镜头角度、文案和导航链接的实际跳转目标。
 
 ## 已知事项
 

@@ -12,6 +12,8 @@
 | --- | --- |
 | 应用框架 | React 19 + Vite |
 | 样式 | 通过 `@tailwindcss/vite` 接入 Tailwind CSS 4 |
+| 客户端状态 | Zustand（按需用于跨组件交互状态） |
+| 类名组合 | clsx（条件式 CSS 类名） |
 | 3D 渲染 | Three.js |
 | 动画 | GSAP |
 | 托管 | Vercel，按 Vite 项目配置 |
