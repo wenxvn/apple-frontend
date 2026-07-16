@@ -179,6 +179,37 @@
 
 - 单页复刻已完成，保留 Three.js 主包体积提示，待性能需求明确后再拆分。
 
+## 2026-07-16 — Git 推送远程诊断与显式配置
+
+### 已完成步骤
+
+1. 核对 `origin` 的 fetch/push URL、`main` 上游跟踪和 Git 配置来源。
+2. 使用与 Codex 提示相同的 `git push --porcelain` 成功推送 `main`。
+3. 为本地仓库显式配置 `branch.main.pushRemote=origin` 和 `remote.pushDefault=origin`，避免客户端解析默认推送远程时产生歧义。
+
+### 修改的文件
+
+- `.git/config`（本地 Git 元数据，不纳入提交）
+- `docs/STATE.md`
+- `docs/PROJECT_LOG.md`
+
+### 验证
+
+- `git push --porcelain` 成功将本地提交推送至 `origin/main`。
+- `git push --porcelain --dry-run` 返回 `up to date`。
+- `main` 已跟踪 `origin/main`，工作树修改保持未提交状态。
+
+### 使用的工具和服务
+
+| 工具或服务 | 用途 | 结果 |
+| --- | --- | --- |
+| Git / GitHub | 诊断、推送并验证远程分支 | 推送成功，`origin/main` 已同步 |
+
+### 当前状态与下一步
+
+- Git 命令行推送路径正常；截图中的“未配置推送远程”属于 Codex 桌面端陈旧状态。
+- 若界面仍显示旧错误，重新打开该项目或创建新的 Codex 任务以刷新其 Git 状态；不要重复添加远程。
+
 ## 2026-07-16 — 动态 UI 依赖安装
 
 ### 已完成步骤
