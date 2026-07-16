@@ -7,13 +7,14 @@
 ## 当前状态
 
 - React + Vite + Tailwind CSS 4 单页项目已初始化，`npm run build` 通过。
-- `src/App.jsx` 已实现 Apple 风格的 MacBook Pro Hero：Three.js 程序化笔记本、彩色灯光、GSAP 入场动画与指针视差。
-- `src/styles.css` 定义该页面的深色沉浸式视觉、导航、渐变标题、CTA 和响应式规则。
-- `ui-registry.md` 已记录首个 Hero 页面可复用的视觉模式。
+- `src/App.jsx` 已实现 MacBook Pro 产品探索页：Three.js 程序化笔记本、银色/深空黑色材质切换、14/16 英寸比例切换，以及拖拽旋转查看。
+- `src/styles.css` 定义黑色产品展示、紧凑的胶囊式配置按钮、键盘可访问焦点和移动端响应式规则。
+- `ui-registry.md` 已记录 Hero 与产品探索配置器的可复用视觉模式。
 - 已安装 `zustand` 和 `clsx`，可用于后续动态交互与条件 CSS 类名。
+- 已安装 `react-responsive`，可用于按媒体查询调整布局或内容；动画仍使用 GSAP。
 - GitHub 仓库 `wenxvn/apple-frontend` 的 `main` 分支已配置 `origin` 上游、显式推送远程和显式 `origin.pushurl`；2026-07-16 已确认可直接推送且与远端同步。
-- Vercel 项目 `wenxvns-projects/apple-frontend` 已关联，框架为 Vite，构建命令为 `npm run build`，输出目录为 `dist`。
-- 尚未创建生产部署。
+- Vercel 项目 `wenxvns-projects/apple-frontend` 已连接 GitHub 仓库 `wenxvn/apple-frontend`；`main` 的后续推送会自动创建生产部署。框架为 Vite，构建命令为 `npm run build`，输出目录为 `dist`。
+- 首次生产部署已就绪，生产验收地址为 `https://apple-frontend-eight.vercel.app`。
 - 工作流已使用“架构说明 + 当前状态 + 历史记录”分层，且具备任务模板与架构决策记录。
 
 ## 当前约定
@@ -24,7 +25,7 @@
 
 ## 下一步
 
-- 如需继续，优先在真实设备上微调镜头角度、文案和导航链接的实际跳转目标。
+- 使用 `npm run dev` 检查桌面端与移动端的拖拽旋转手感；如需继续，优先微调镜头角度和显示器内的图案细节。
 
 ## 已知事项
 
