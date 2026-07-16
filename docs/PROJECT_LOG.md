@@ -114,3 +114,27 @@
 
 - 工作流文档已具备任务规划、状态恢复、决策沉淀和完成检查能力。
 - 下一项非简单任务开始前，使用 `docs/TASK_TEMPLATE.md` 建立计划。
+
+## 2026-07-16 — GitHub 推送恢复
+
+### 已完成步骤
+
+1. 核对本地 `main` 分支、`origin` 推送地址和远端分支可达性。
+2. 成功将待推送的工作流提交从本地 `main` 推送至 GitHub 远端 `main`。
+
+### 验证
+
+- `git diff --check` 通过。
+- `git ls-remote --heads origin main` 成功返回远端 `main`。
+- `git push --porcelain origin main` 成功，将远端从 `a1ba02c` 更新至 `dfa1e00`。
+
+### 使用的工具和服务
+
+| 工具或服务 | 用途 | 结果 |
+| --- | --- | --- |
+| Git / GitHub | 核对远程配置并推送本地提交 | `origin` 指向 `wenxvn/apple-frontend`，推送成功 |
+
+### 当前状态与下一步
+
+- 本地 `main` 的既有提交已同步至 GitHub。
+- 如 Codex 界面继续显示“未配置远程”，重新打开任务或项目以刷新其 Git 状态。

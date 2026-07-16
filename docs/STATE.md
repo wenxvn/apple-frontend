@@ -8,7 +8,7 @@
 
 - React + Vite + Tailwind CSS 4 学习项目已初始化，`npm run build` 通过。
 - `src/App.jsx` 包含 Tailwind、Three.js 和 GSAP 的组合示例。
-- GitHub 仓库 `wenxvn/apple-frontend` 的 `main` 分支已配置并推送。
+- GitHub 仓库 `wenxvn/apple-frontend` 的 `main` 分支已配置并推送；2026-07-16 已确认可直接推送。
 - Vercel 项目 `wenxvns-projects/apple-frontend` 已关联，框架为 Vite，构建命令为 `npm run build`，输出目录为 `dist`。
 - 尚未创建生产部署。
 - 工作流已使用“架构说明 + 当前状态 + 历史记录”分层，且具备任务模板与架构决策记录。
