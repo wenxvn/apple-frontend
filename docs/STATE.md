@@ -11,7 +11,7 @@
 - `src/styles.css` 定义该页面的深色沉浸式视觉、导航、渐变标题、CTA 和响应式规则。
 - `ui-registry.md` 已记录首个 Hero 页面可复用的视觉模式。
 - 已安装 `zustand` 和 `clsx`，可用于后续动态交互与条件 CSS 类名。
-- GitHub 仓库 `wenxvn/apple-frontend` 的 `main` 分支已配置 `origin` 上游和显式推送远程；2026-07-16 已确认可直接推送且与远端同步。
+- GitHub 仓库 `wenxvn/apple-frontend` 的 `main` 分支已配置 `origin` 上游、显式推送远程和显式 `origin.pushurl`；2026-07-16 已确认可直接推送且与远端同步。
 - Vercel 项目 `wenxvns-projects/apple-frontend` 已关联，框架为 Vite，构建命令为 `npm run build`，输出目录为 `dist`。
 - 尚未创建生产部署。
 - 工作流已使用“架构说明 + 当前状态 + 历史记录”分层，且具备任务模板与架构决策记录。

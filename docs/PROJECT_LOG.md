@@ -210,6 +210,30 @@
 - Git 命令行推送路径正常；截图中的“未配置推送远程”属于 Codex 桌面端陈旧状态。
 - 若界面仍显示旧错误，重新打开该项目或创建新的 Codex 任务以刷新其 Git 状态；不要重复添加远程。
 
+## 2026-07-16 — Codex 推送远程兼容性补强
+
+### 已完成步骤
+
+1. 确认 `origin` 仅配置通用 URL，Git 会将其作为推送 URL 回退使用，但不存在显式 `remote.origin.pushurl`。
+2. 添加与 `origin` URL 相同的显式 `remote.origin.pushurl`，供只识别该字段的 Git 客户端使用。
+3. 成功将提交 `c1a1c93` 推送至 `origin/main`。
+
+### 修改的文件
+
+- `.git/config`（本地 Git 元数据，不纳入提交）
+- `docs/STATE.md`
+- `docs/PROJECT_LOG.md`
+
+### 验证
+
+- `git remote -v` 同时显示 `origin` 的 fetch 和 push 地址。
+- `git push --porcelain --dry-run` 识别远端并通过。
+- `git push --porcelain` 成功同步 `main` 到 `origin/main`。
+
+### 当前状态与下一步
+
+- 命令行和显式 push URL 均正常；关闭当前错误弹窗后重新打开项目，让 Codex 重新读取 `.git/config`。
+
 ## 2026-07-16 — 动态 UI 依赖安装
 
 ### 已完成步骤
