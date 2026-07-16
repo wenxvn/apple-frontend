@@ -15,6 +15,7 @@
 - GitHub 仓库 `wenxvn/apple-frontend` 的 `main` 分支已配置 `origin` 上游、显式推送远程和显式 `origin.pushurl`；2026-07-16 已确认可直接推送且与远端同步。
 - Vercel 项目 `wenxvns-projects/apple-frontend` 已连接 GitHub 仓库 `wenxvn/apple-frontend`；`main` 的后续推送会自动创建生产部署。框架为 Vite，构建命令为 `npm run build`，输出目录为 `dist`。
 - 首次生产部署已就绪，生产验收地址为 `https://apple-frontend-eight.vercel.app`。
+- 自动部署已由提交 `c23d86e` 验证为 `READY`。
 - 工作流已使用“架构说明 + 当前状态 + 历史记录”分层，且具备任务模板与架构决策记录。
 
 ## 当前约定
