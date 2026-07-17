@@ -1,30 +1,33 @@
-# Memory — MacBook Pro 产品探索页
+# Memory — MacBook Pro 主界面与产品探索
 
-Last updated: 2026-07-16 11:35 CST
+Last updated: 2026-07-17 12:55 CST
 
 ## What was built
 
-- `src/App.jsx` 现在展示可旋转的 Three.js MacBook Pro，支持银色/深空黑色和 14/16 英寸选择。
-- `src/styles.css` 实现黑色产品探索布局、胶囊式控制器、键盘焦点和移动端规则。
-- `ui-registry.md`、`docs/STATE.md` 与 `docs/PROJECT_LOG.md` 已记录页面模式、当前状态和验证结果。
+- `src/App.jsx` 恢复两段式页面：首屏 Hero 包含导航、产品文案和通往 `#explore` 的锚点；下方保留可配置的产品探索区。
+- 程序化 Three.js 模型抽为可复用的 `MacBookCanvas`，加强屏幕、键盘、触控板、扬声器、铰链和机身的可见性。
+- 屏幕已从三组环形几何体改为深色渐变反射纹理；探索器仍支持颜色、尺寸和拖拽旋转。
+- `src/styles.css`、`ui-registry.md`、`docs/STATE.md` 与 `docs/PROJECT_LOG.md` 已同步更新。
 
 ## Decisions made
 
-- 继续使用程序化 Three.js 模型，不引入外部 3D 资源；颜色驱动材质，尺寸驱动模型比例。
-- 旋转仅在按住画布拖动时发生，并限制俯仰与偏航范围，保持可用的产品视角。
+- 保持程序化 Three.js 模型，不增加外部产品图片或 3D 资源。
+- 主界面始终作为首个视口；“近距离看看”是下方独立产品区，不再替代首屏。
+- 屏幕维持无符号、无环形装饰的低调深色反射，以凸显笔记本本体。
 
 ## Problems solved
 
-- 修正显示器盖板朝向，确保默认镜头正面显示屏幕，同时在旋转时呈现键盘和机身。
+- 修复探索页面错误取代主界面的问题。
+- 调整镜头、屏幕开合角度、材质和灯光，避免深空黑色模型与黑色背景混在一起。
 
 ## Current state
 
-- `npm run build` 通过；本地浏览器已验证默认状态、颜色与尺寸切换、无障碍选中状态和拖拽旋转。
-- Three.js 主包超过 500 kB 的构建提示仍存在，是已知的后续性能优化项。
+- `npm run build` 通过；本地浏览器验证了首屏、锚点进入探索区、银色切换的选中状态和无控制台错误。
+- 已知的 Three.js 主包超过 500 kB 构建提示仍存在，未在本次扩展为性能优化。
 
 ## Next session starts with
 
-- 如需继续，使用 `npm run dev` 在桌面与移动端微调相机取景、旋转灵敏度或显示器图案。
+- 如有新的视觉反馈，在桌面和移动设备上优先微调镜头角度、模型亮度和拖拽手感。
 
 ## Open questions
 
