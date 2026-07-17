@@ -9,7 +9,12 @@ const finishes = {
 }
 
 const sizes = ['14', '16']
-const navigation = ['MacBook Pro', '性能', '显示屏', '探索']
+const navigation = [
+  { label: 'MacBook Pro', href: '#home' },
+  { label: '性能', href: '#performance' },
+  { label: '显示屏', href: '#home' },
+  { label: '探索', href: '#explore' },
+]
 
 function createScreenTexture() {
   const textureCanvas = document.createElement('canvas')
@@ -228,6 +233,10 @@ function MacBookCanvas({ finish, size, interactive = false, variant = 'explorer'
 function App() {
   const heroCopyRef = useRef(null)
   const heroStageRef = useRef(null)
+  const performanceRef = useRef(null)
+  const performanceCopyRef = useRef(null)
+  const performanceChipRef = useRef(null)
+  const performanceMetricsRef = useRef(null)
   const [finish, setFinish] = useState('spaceBlack')
   const [size, setSize] = useState('16')
 
@@ -240,6 +249,39 @@ function App() {
     return () => animation.kill()
   }, [])
 
+  useEffect(() => {
+    const section = performanceRef.current
+    const copy = performanceCopyRef.current
+    const chip = performanceChipRef.current
+    const metrics = performanceMetricsRef.current
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reduceMotion) return undefined
+
+    const animation = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } })
+    animation
+      .fromTo(copy, { autoAlpha: 0, y: 28 }, { autoAlpha: 1, y: 0, duration: 0.7 })
+      .fromTo(chip, { autoAlpha: 0, scale: 0.82, rotate: -8 }, { autoAlpha: 1, scale: 1, rotate: 0, duration: 0.9 }, '-=0.35')
+      .fromTo(metrics.children, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.55, stagger: 0.12 }, '-=0.4')
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          animation.play()
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.28 },
+    )
+
+    observer.observe(section)
+
+    return () => {
+      observer.disconnect()
+      animation.kill()
+    }
+  }, [])
+
   return (
     <main>
       <section className="experience" id="home" aria-labelledby="hero-title">
@@ -248,7 +290,7 @@ function App() {
             <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.5c6.9 0 12.5 5.6 12.5 12.5S22.9 28.5 16 28.5 3.5 22.9 3.5 16 9.1 3.5 16 3.5Zm0 5.1a7.4 7.4 0 1 0 0 14.8 7.4 7.4 0 0 0 0-14.8Z" /></svg>
           </a>
           <div className="nav-links">
-            {navigation.map((item) => <a key={item} href={item === '探索' ? '#explore' : '#home'}>{item}</a>)}
+            {navigation.map((item) => <a key={item.label} href={item.href}>{item.label}</a>)}
           </div>
           <a className="nav-explore" href="#explore">探索</a>
         </nav>
@@ -308,6 +350,39 @@ function App() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="performance" id="performance" ref={performanceRef} aria-labelledby="performance-title">
+        <div className="performance-copy" ref={performanceCopyRef}>
+          <p>性能</p>
+          <h2 id="performance-title">冲劲十足。</h2>
+          <span>专为突破性工作流而打造。</span>
+        </div>
+
+        <div className="performance-chip" ref={performanceChipRef} aria-hidden="true">
+          <div className="performance-chip__surface">
+            <span>M4</span>
+            <i />
+            <i />
+            <i />
+            <i />
+          </div>
+        </div>
+
+        <div className="performance-metrics" ref={performanceMetricsRef}>
+          <article>
+            <strong>高达 24 核</strong>
+            <span>GPU 核心，处理复杂创作。</span>
+          </article>
+          <article>
+            <strong>高达 128GB</strong>
+            <span>统一内存，多任务从容应对。</span>
+          </article>
+          <article>
+            <strong>最长 24 小时</strong>
+            <span>电池续航，专注更久。</span>
+          </article>
         </div>
       </section>
     </main>

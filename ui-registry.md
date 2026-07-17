@@ -37,3 +37,22 @@ Last updated: 2026-07-17
 | Accent usage | Selection state uses neutral white/gray; the screen is a bright peach-to-blue gradient wallpaper with an abstract wave and no symbolic or ring-shaped artwork |
 
 **Pattern notes:** Product configuration controls should read as compact dark pill groups. Keep color selections icon-only with an accessible label, invert the active size button to white, and show a clear MacBook silhouette: rounded thin unibody, slim notched display, centered trackpad, keyboard, and speaker perforations.
+
+### Performance Story Section
+
+File: `src/App.jsx`, `src/styles.css`
+Last updated: 2026-07-17
+
+| Property | Pattern |
+| --- | --- |
+| Background | `#000` with a centered, restrained blue radial glow |
+| Border | Metrics use a 1px translucent white divider; the chip uses a subtle blue-white edge |
+| Border radius | The chip remains softly rounded at `23%`; the page section has no container frame |
+| Text — primary | `#f5f5f7`; bold, tight tracking for the statement and metrics |
+| Text — secondary | `rgba(245, 245, 247, 0.6–0.68)` for the supporting statement and metric descriptions |
+| Spacing | Generous vertical rhythm around one central chip; metrics align in a three-column rail on desktop and stack on mobile |
+| Hover state | None; section is a scroll-driven editorial moment, not a control surface |
+| Shadow | Blue chip glow with restrained inset reflections only |
+| Accent usage | Blue-violet is isolated to the abstract chip visual and its radial ambient light |
+
+**Pattern notes:** Use one central product-performance artifact rather than cards. Reveal the heading, artifact, and metrics in order only when motion is allowed; all content must remain visible when reduced motion is preferred.
