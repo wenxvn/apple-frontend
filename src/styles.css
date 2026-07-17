@@ -18,7 +18,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; }
 
 .experience {
-  background: radial-gradient(ellipse 62% 30% at 50% 88%, rgba(46, 66, 152, 0.18), transparent 70%), #000;
+  background: radial-gradient(ellipse 58% 36% at 50% 88%, rgba(126, 145, 184, 0.26), transparent 70%), #000;
   min-height: 100svh;
   overflow: hidden;
   position: relative;
@@ -55,7 +55,7 @@ button { font: inherit; }
 
 .product-explorer {
   align-items: center;
-  background: radial-gradient(ellipse 42% 34% at 50% 45%, rgba(42, 61, 141, 0.12), transparent 68%), #000;
+  background: radial-gradient(ellipse 52% 40% at 50% 47%, rgba(125, 145, 184, 0.22), transparent 70%), #000;
   display: flex;
   min-height: 100svh;
   padding: 72px 20px 34px;
